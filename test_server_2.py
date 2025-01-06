@@ -1,10 +1,16 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
+from pydantic import BaseModel
 
-# Создаем экземпляр FastAPI
+# Модель данных для запроса
+class Data(BaseModel):
+    id: int
+    name: str
+    price: float
+    description: str = None
+
 app = FastAPI()
 
-# Определяем маршрут
 @app.get("/")
 def read_root():
     return {"message": "This is test_server_2"}

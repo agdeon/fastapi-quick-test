@@ -1,5 +1,5 @@
 @echo off
-set PYTHON_SCRIPT_NAME=test_server_1
+set PYTHON_SCRIPT_NAME=post_request_test_server
 set PORT=8000
 
 color 02
@@ -10,7 +10,7 @@ if not exist "venv\" (
 	python -m venv venv
 	call venv\Scripts\activate.bat
 	python -m ensurepip --upgrade
-	pip install fastapi uvicorn
+	pip install fastapi uvicorn requests
 	cls
 	echo [^+] The virtual environment is configured and packages fastapi and uvicorn are installed.
 	timeout /t 1
